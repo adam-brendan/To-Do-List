@@ -1,0 +1,24 @@
+li {
+    list-style-type: none;
+}
+
+.delete-icon {
+    height: 1.3em;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+}
+
+.margin-right {
+    margin-right: 1em;
+}
+
+.margin-left {
+    margin-left: 1em;
+}
+
+.complete {
+    text-decoration: line-through;
+}
