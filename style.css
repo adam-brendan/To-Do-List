@@ -19,6 +19,10 @@ li {
     margin-left: 1em;
 }
 
+.margin-bottom {
+    margin-bottom: 1em;
+}
+
 .complete {
     text-decoration: line-through;
 }

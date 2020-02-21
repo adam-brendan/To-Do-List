@@ -11,7 +11,7 @@ const inputLength = () => {
 
 const createListElement = () => {
     let li = document.createElement("li");
-    li.classList.add("list-item");
+    li.classList.add("list-item", "margin-bottom");
 
 
     let checkbox = document.createElement("input");
@@ -23,7 +23,7 @@ const createListElement = () => {
     li.appendChild(document.createTextNode(input.value));
 
     let deleteButton = document.createElement("button");
-    deleteButton.classList.add("margin-left", "delete-button");
+    deleteButton.classList.add("delete-button", "margin-left");
 
     let deleteIcon = document.createElement("img");
     deleteIcon.setAttribute("src", "delete.png");
@@ -52,8 +52,9 @@ const addListAfterKeypress = (event) => {
 }
 
 const deleteListItem = (event) => {
-    let toRemove = event.target;
-    toRemove.parentNode.parentNode.remove();
+    let toRemove = event.currentTarget;
+    console.log("PARENT", toRemove.parentNode.parentNode);
+    toRemove.parentNode.remove();
 }
 
 const checkOff = (event) => {
