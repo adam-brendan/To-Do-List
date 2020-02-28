@@ -11,7 +11,7 @@ const inputLength = () => {
 
 const createListElement = () => {
     let li = document.createElement("li");
-    li.classList.add("list-item", "margin-bottom");
+    li.classList.add("list-item", "margin-bottom", "fade-in");
 
 
     let checkbox = document.createElement("input");
@@ -36,7 +36,6 @@ const createListElement = () => {
     listContainer.appendChild(li);
     input.value = "";
 
-
 }
 
 const addListAfterClick = () => {
@@ -53,8 +52,13 @@ const addListAfterKeypress = (event) => {
 
 const deleteListItem = (event) => {
     let toRemove = event.currentTarget;
-    console.log("PARENT", toRemove.parentNode.parentNode);
-    toRemove.parentNode.remove();
+    console.log(toRemove.parentNode.classList)
+    toRemove.parentNode.classList.remove("fade-in")
+    toRemove.parentElement.classList.add("fade-out")
+    console.log(toRemove.parentNode.classList)
+    setTimeout(function(){
+        toRemove.parentNode.remove();
+    }, 1000);
 }
 
 const checkOff = (event) => {
